@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+Edit Feedback
+{% endblock  %}
+{% block content %}
+<div class="container">
+<div class="card">
+    <h5 class="card-header">Edit Feedback</h5>
+    <div class="card-body">
+      <h5 class="card-title">Edit your feedback here</h5>
+      <form target="/feedback/{{feedback.id}}/update" method="POST">
+        {% include 'feedback_form.j2' %}
+        <button type="submit" class="btn btn-success btn-large mt-2">Edit</button>
+    </form>
+    <form action="/feedback/{{feedback.id}}/delete" method="POST" class="mt-2"><button class="btn btn-danger btn-large">Delete Post</button></form>
+    </div>
+    </div>
+{% endblock %}

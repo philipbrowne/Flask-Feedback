@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+Feedback Form
+{% endblock  %}
+{% block content %}
+<div class="container">
+<div class="card">
+    <h5 class="card-header">Feedback Form</h5>
+    <div class="card-body">
+      <h5 class="card-title">Submit your feedback here</h5>
+    <form target="/users/{{user.username}}/feedback/add" method="POST">
+    {% include 'feedback_form.j2' %}
+      <button type="submit" class="btn btn-success btn-large mt-2">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}
